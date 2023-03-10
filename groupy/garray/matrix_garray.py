@@ -14,8 +14,8 @@ class MatrixGArray(GArray):
     def __init__(self, data, p='int'):
         data = np.asarray(data)
 
-        if p == 'int' and data.dtype != np.int:
-            raise ValueError('data.dtype must be int when integer parameterization is used.')
+        if p == 'int' and data.dtype != np.int32:
+            raise ValueError('data.dtype must be np.int32 when integer parameterization is used.')
 
         if 'mat' not in self.parameterizations and 'hmat' not in self.parameterizations:
             raise AssertionError('Subclasses of MatrixGArray should always have a "mat" and/or "hmat" parameterization')
